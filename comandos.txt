@@ -1,0 +1,24 @@
+Wiliane da Silva Lima - Matrícula: 20251ZL00130041
+
+Comandos utilizados:
+
+mkdir tarefa-ramificacoes-merge
+cd tarefa-ramificacoes-merge
+git clone https://gitlab.com/mizael.cortez/curso-branchs-ifrn-ead
+cd curso-branchs-ifrn-ead
+echo "Atividade 02 - Ramificações e Merge" > texto.txt
+git add texto.txt
+git commit -m "Adiciona texto.txt com mensagem inicial"
+git checkout -b nova-feature
+echo "Alteração feita na nova-feature" >> texto.txt
+git add texto.txt
+git commit -m "Altera texto.txt na nova-feature"
+git checkout main
+echo "Alteração feita na main (para conflito)" >> texto.txt
+git add texto.txt
+git commit -m "Altera texto.txt na main para causar conflito"
+git merge nova-feature
+# (resolver o conflito manualmente)
+git add texto.txt
+git commit -m "Resolve conflito de merge entre main e nova-feature"
+git checkout -b add-comandos
